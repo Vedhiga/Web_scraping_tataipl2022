@@ -86,7 +86,7 @@ df = pd.DataFrame(data, columns=["SR. NO."] + columns)
 ...   ...                       ...               ...               ...            ...
 ```
 
-🛠️ Tools & Libraries
+## 🛠️ Tools & Libraries
 requests – for sending HTTP requests
 
 BeautifulSoup – for parsing HTML content
@@ -95,7 +95,7 @@ pandas – for tabular data manipulation
 
 Jupyter Notebook or any IDE (like VS Code)
 
-🧠 What I Learned
+## 🧠 What I Learned
 How to navigate HTML content programmatically
 
 How to debug common issues like:
@@ -106,7 +106,7 @@ Mismatched columns during DataFrame creation
 
 The importance of data cleaning, even for structured websites
 
-📌 Conclusion
+## 📌 Conclusion
 This was a fun and insightful project to get hands-on with web scraping and real-world sports data 🏆
 I plan to extend this into an interactive IPL dashboard using Plotly or Streamlit.
 
