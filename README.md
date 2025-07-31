@@ -51,46 +51,35 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-2. Sending the Request
-We send a GET request to the IPL 2022 auction page:
+'''2. Sending the Request
+We send a GET request to the IPL 2022 auction page:'''
 
-python
-Copy
-Edit
 url = "https://www.iplt20.com/auction/2022"
 response = requests.get(url)
 soup = BeautifulSoup(response.content, "html.parser")
-3. Parsing the HTML
-We locate the auction table from the page using class names:
 
-python
-Copy
-Edit
+'''3. Parsing the HTML
+We locate the auction table from the page using class names:'''
+
 table = soup.find("table", class_="ih-pg-sq-tbl")
-4. Extracting Table Data
-We loop through the rows and extract data:
 
-python
-Copy
-Edit
+'''4. Extracting Table Data
+We loop through the rows and extract data:'''
+
 data = []
 for row in table.find_all("tr")[1:]:  # Skip header
     cols = row.find_all("td")
     if cols:
         data.append([col.text.strip() for col in cols])
-5. Cleaning & Structuring the Data
-We define column names (excluding SR. NO. as it's not meaningful) and build the DataFrame:
 
-python
-Copy
-Edit
+'''5. Cleaning & Structuring the Data
+We define column names (excluding SR. NO. as it's not meaningful) and build the DataFrame:'''
+
 columns = ["TEAM", "FUNDS REMAINING", "OVERSEAS PLAYERS", "TOTAL PLAYERS"]
 df = pd.DataFrame(data, columns=["SR. NO."] + columns)
 
-6. Final Output
-bash
-Copy
-Edit
+'''6. Final Output'''
+
    SR. NO.                     TEAM FUNDS REMAINING  OVERSEAS PLAYERS  TOTAL PLAYERS
 0     N/A      Chennai Super Kings     ₹2,95,00,000                 8             25
 1     N/A           Delhi Capitals       ₹10,00,000                 7             24
